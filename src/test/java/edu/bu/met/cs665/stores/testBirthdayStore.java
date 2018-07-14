@@ -10,6 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 import edu.bu.met.cs665.products.EliteChocolateBox;
 import edu.bu.met.cs665.products.Product;
+import edu.bu.met.cs665.products.SimpleFlowerArrangement;
 
 public class testBirthdayStore {
   Store store;
@@ -23,6 +24,7 @@ public class testBirthdayStore {
 //    List<Product> expectedProducts = new ArrayList<>(Arrays.asList(new EliteChocolateBox()));
     List<Product> actualProducts = store.getProducts();
     assertThat(actualProducts.get(0), instanceOf(EliteChocolateBox.class));
+    assertThat(actualProducts.get(1), instanceOf(SimpleFlowerArrangement.class));
   }
 
 }

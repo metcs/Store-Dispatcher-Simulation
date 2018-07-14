@@ -5,7 +5,7 @@
     project="met-cs665-summer-2018-assignment-2-richardhanksjr" 
     file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/stores/Store.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="381" y="283"/>    
+    <position height="-1" width="-1" x="477" y="319"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -16,7 +16,7 @@
     project="met-cs665-summer-2018-assignment-2-richardhanksjr" 
     file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/stores/BirthdayStore.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="880" y="513"/>    
+    <position height="-1" width="-1" x="777" y="592"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -27,7 +27,7 @@
     project="met-cs665-summer-2018-assignment-2-richardhanksjr" 
     file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/stores/CandyStore.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="559" y="515"/>    
+    <position height="-1" width="-1" x="539" y="780"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -38,7 +38,7 @@
     project="met-cs665-summer-2018-assignment-2-richardhanksjr" 
     file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/stores/FlowerStore.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="244" y="518"/>    
+    <position height="-1" width="-1" x="98" y="607"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -49,7 +49,7 @@
     project="met-cs665-summer-2018-assignment-2-richardhanksjr" 
     file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/stores/FoodStore.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="415" y="695"/>    
+    <position height="-1" width="-1" x="242" y="784"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -60,7 +60,7 @@
     project="met-cs665-summer-2018-assignment-2-richardhanksjr" 
     file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/stores/PartyStore.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="155" width="274" x="664" y="606"/>    
+    <position height="-1" width="-1" x="852" y="769"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -71,57 +71,257 @@
     project="met-cs665-summer-2018-assignment-2-richardhanksjr" 
     file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/stores/StoreFactory.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="821" y="273"/>    
+    <position height="-1" width="-1" x="567" y="121"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <realization id="8">    
+  <class id="8" language="java" name="edu.bu.met.cs665.customers.Customer" 
+    project="met-cs665-summer-2018-assignment-2-richardhanksjr" 
+    file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/customers/Customer.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="173" y="36"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="edu.bu.met.cs665.stores.AbstractStore" 
+    project="met-cs665-summer-2018-assignment-2-richardhanksjr" 
+    file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/stores/AbstractStore.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="472" y="506"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="10" language="java" name="edu.bu.met.cs665.products.Product" 
+    project="met-cs665-summer-2018-assignment-2-richardhanksjr" 
+    file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/products/Product.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="65" width="137" x="857" y="141"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="11" language="java" name="edu.bu.met.cs665.products.GiftChocolateBox" 
+    project="met-cs665-summer-2018-assignment-2-richardhanksjr" 
+    file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/products/GiftChocolateBox.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="83" width="146" x="859" y="320"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="edu.bu.met.cs665.products.FlowerBouquet" 
+    project="met-cs665-summer-2018-assignment-2-richardhanksjr" 
+    file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/products/FlowerBouquet.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="83" width="137" x="1049" y="209"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="edu.bu.met.cs665.products.Food" 
+    project="met-cs665-summer-2018-assignment-2-richardhanksjr" 
+    file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/products/Food.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1101" y="431"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="edu.bu.met.cs665.products.ColdMeal" 
+    project="met-cs665-summer-2018-assignment-2-richardhanksjr" 
+    file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/products/ColdMeal.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="83" width="137" x="1060" y="596"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="edu.bu.met.cs665.products.HotMeal" 
+    project="met-cs665-summer-2018-assignment-2-richardhanksjr" 
+    file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/products/HotMeal.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1307" y="629"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="edu.bu.met.cs665.products.SimpleFlowerArrangement" 
+    project="met-cs665-summer-2018-assignment-2-richardhanksjr" 
+    file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/products/SimpleFlowerArrangement.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="83" width="204" x="1223" y="192"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="edu.bu.met.cs665.products.EliteFlowerArrangement" 
+    project="met-cs665-summer-2018-assignment-2-richardhanksjr" 
+    file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/products/EliteFlowerArrangement.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="83" width="188" x="1188" y="318"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="edu.bu.met.cs665.products.SimpleChocolateBox" 
+    project="met-cs665-summer-2018-assignment-2-richardhanksjr" 
+    file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/products/SimpleChocolateBox.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="716" y="429"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="edu.bu.met.cs665.products.EliteChocolateBox" 
+    project="met-cs665-summer-2018-assignment-2-richardhanksjr" 
+    file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/products/EliteChocolateBox.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="942" y="483"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <generalization id="20">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <generalization id="21">    
     <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="1"/>  
-  </realization>  
-  <dependency id="9">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="1"/>  
-  </dependency>  
-  <dependency id="10">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="4"/>  
-  </dependency>  
-  <dependency id="11">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="5"/>  
-  </dependency>  
-  <realization id="12">    
+    <end type="TARGET" refId="9"/>  
+  </generalization>  
+  <generalization id="22">    
     <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="1"/>  
-  </realization>  
-  <realization id="13">    
+    <end type="TARGET" refId="9"/>  
+  </generalization>  
+  <generalization id="23">    
     <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="1"/>  
-  </realization>  
-  <dependency id="14">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="3"/>  
-  </dependency>  
-  <realization id="15">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="1"/>  
-  </realization>  
-  <realization id="16">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="1"/>  
-  </realization>  
-  <dependency id="17">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="2"/>  
-  </dependency>  
-  <dependency id="18">    
+    <end type="TARGET" refId="9"/>  
+  </generalization>  
+  <generalization id="24">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="13"/>  
+  </generalization>  
+  <dependency id="25">    
     <end type="SOURCE" refId="7"/>    
     <end type="TARGET" refId="6"/>  
   </dependency>  
+  <generalization id="26">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="9"/>  
+  </generalization>  
+  <realization id="27">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <generalization id="28">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="13"/>  
+  </generalization>  
+  <dependency id="29">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <dependency id="30">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="31">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <dependency id="32">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="33">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="34">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <generalization id="35">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="11"/>  
+  </generalization>  
+  <dependency id="36">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="37">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="38">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="39">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <generalization id="40">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
+  <dependency id="41">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <association id="42">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="43" name="products"/>      
+      <multiplicity id="44" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="45">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <generalization id="46">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="9"/>  
+  </generalization>  
+  <dependency id="47">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <generalization id="48">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="12"/>  
+  </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

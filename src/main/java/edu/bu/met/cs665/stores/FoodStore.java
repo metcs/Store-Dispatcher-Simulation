@@ -29,12 +29,5 @@ public class FoodStore extends AbstractStore{
     
   }
 
-  @Override
-  public Order createOrder(List<Product> products) {
-    // TODO Auto-generated method stub
-    return null;
-  }
-
-
 
 }

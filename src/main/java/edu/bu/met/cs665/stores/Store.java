@@ -12,7 +12,7 @@ public interface Store {
     // Submit an order request to the dispatcher to have the dispatcher schedule a delivery
     void submitDeliveryRequest(Order order, Customer customer);
     // Create an order out of a list of products
-    Order createOrder(List<Product> products);
+    void createOrder(List<Product> products);
     // Return a list of the products in the store
     public List<Product> getProducts();
 }

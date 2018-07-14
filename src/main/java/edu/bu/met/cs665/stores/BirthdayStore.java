@@ -13,9 +13,9 @@ import edu.bu.met.cs665.products.SimpleFlowerArrangement;
 public class BirthdayStore extends AbstractStore{
 
   public BirthdayStore(){
-//    this.products = new ArrayList<Product>(Arrays.asList(new EliteChocolateBox(), new SimpleFlowerArrangement()));
     this.products = new ArrayList<>();
     this.products.add(new EliteChocolateBox());
+    this.products.add(new SimpleFlowerArrangement());
   }
   @Override
   public Dispatcher getDispatcher(String dispatcherName) {
@@ -28,12 +28,5 @@ public class BirthdayStore extends AbstractStore{
     // TODO Auto-generated method stub
     
   }
-
-  @Override
-  public Order createOrder(List<Product> products) {
-    // TODO Auto-generated method stub
-    return null;
-  }
-
 
 }
