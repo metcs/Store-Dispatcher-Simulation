@@ -1,12 +1,25 @@
 package edu.bu.met.cs665.stores;
 
+import java.util.ArrayList;
 import java.util.List;
 import edu.bu.met.cs665.customers.Customer;
 import edu.bu.met.cs665.dispatchers.Dispatcher;
 import edu.bu.met.cs665.orders.Order;
+import edu.bu.met.cs665.products.ColdMeal;
+import edu.bu.met.cs665.products.EliteFlowerArrangement;
+import edu.bu.met.cs665.products.HotMeal;
 import edu.bu.met.cs665.products.Product;
+import edu.bu.met.cs665.products.SimpleChocolateBox;
 
-public class PartyStore implements Store{
+public class PartyStore extends AbstractStore{
+  
+  public PartyStore(){
+    this.products = new ArrayList<>();
+    this.products.add(new EliteFlowerArrangement());
+    this.products.add(new HotMeal());
+    this.products.add(new ColdMeal());
+    this.products.add(new SimpleChocolateBox());
+  }
 
   @Override
   public Dispatcher getDispatcher(String dispatcherName) {
@@ -26,10 +39,6 @@ public class PartyStore implements Store{
     return null;
   }
 
-  @Override
-  public List<Product> productsInStore() {
-    // TODO Auto-generated method stub
-    return null;
-  }
+
 
 }

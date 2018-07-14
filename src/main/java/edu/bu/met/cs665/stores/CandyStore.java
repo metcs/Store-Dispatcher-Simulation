@@ -1,13 +1,21 @@
 package edu.bu.met.cs665.stores;
 
+import java.util.ArrayList;
 import java.util.List;
 import edu.bu.met.cs665.customers.Customer;
 import edu.bu.met.cs665.dispatchers.Dispatcher;
 import edu.bu.met.cs665.orders.Order;
+import edu.bu.met.cs665.products.EliteChocolateBox;
 import edu.bu.met.cs665.products.Product;
+import edu.bu.met.cs665.products.SimpleChocolateBox;
 
-public class CandyStore implements Store{
+public class CandyStore extends AbstractStore{
 
+  public CandyStore(){
+    this.products = new ArrayList<>();
+    this.products.add(new EliteChocolateBox());
+    this.products.add(new SimpleChocolateBox());
+  }
   @Override
   public Dispatcher getDispatcher(String dispatcherName) {
     // TODO Auto-generated method stub
@@ -26,10 +34,5 @@ public class CandyStore implements Store{
     return null;
   }
 
-  @Override
-  public List<Product> productsInStore() {
-    // TODO Auto-generated method stub
-    return null;
-  }
 
 }

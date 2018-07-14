@@ -14,5 +14,5 @@ public interface Store {
     // Create an order out of a list of products
     Order createOrder(List<Product> products);
     // Return a list of the products in the store
-    public List<Product> productsInStore();
+    public List<Product> getProducts();
 }

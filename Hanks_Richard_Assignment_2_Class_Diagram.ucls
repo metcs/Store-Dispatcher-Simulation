@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.2" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
   realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <interface id="1" language="java" name="edu.bu.met.cs665.dispatchers.Dispatcher" 
-    project="met-cs665-summer-2018-assignment-2-richardhanksjr" 
-    file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/dispatchers/Dispatcher.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="629" y="117"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </interface>  
-  <interface id="2" language="java" name="edu.bu.met.cs665.orders.Order" 
-    project="met-cs665-summer-2018-assignment-2-richardhanksjr" 
-    file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/orders/Order.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="122" y="446"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </interface>  
-  <interface id="3" language="java" name="edu.bu.met.cs665.stores.Store" 
+  <interface id="1" language="java" name="edu.bu.met.cs665.stores.Store" 
     project="met-cs665-summer-2018-assignment-2-richardhanksjr" 
     file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/stores/Store.java" 
     binary="false" corner="BOTTOM_RIGHT">    
@@ -34,28 +12,115 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <interface id="4" language="java" name="edu.bu.met.cs665.products.Product" 
+  <class id="2" language="java" name="edu.bu.met.cs665.stores.BirthdayStore" 
     project="met-cs665-summer-2018-assignment-2-richardhanksjr" 
-    file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/products/Product.java" 
+    file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/stores/BirthdayStore.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="510" y="511"/>    
+    <position height="-1" width="-1" x="880" y="513"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
-  </interface>  
-  <dependency id="5">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="4"/>  
-  </dependency>  
-  <dependency id="6">    
-    <end type="SOURCE" refId="3"/>    
+  </class>  
+  <class id="3" language="java" name="edu.bu.met.cs665.stores.CandyStore" 
+    project="met-cs665-summer-2018-assignment-2-richardhanksjr" 
+    file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/stores/CandyStore.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="559" y="515"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="edu.bu.met.cs665.stores.FlowerStore" 
+    project="met-cs665-summer-2018-assignment-2-richardhanksjr" 
+    file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/stores/FlowerStore.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="244" y="518"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="edu.bu.met.cs665.stores.FoodStore" 
+    project="met-cs665-summer-2018-assignment-2-richardhanksjr" 
+    file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/stores/FoodStore.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="415" y="695"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="edu.bu.met.cs665.stores.PartyStore" 
+    project="met-cs665-summer-2018-assignment-2-richardhanksjr" 
+    file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/stores/PartyStore.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="155" width="274" x="664" y="606"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="edu.bu.met.cs665.stores.StoreFactory" 
+    project="met-cs665-summer-2018-assignment-2-richardhanksjr" 
+    file="/met-cs665-summer-2018-assignment-2-richardhanksjr/src/main/java/edu/bu/met/cs665/stores/StoreFactory.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="821" y="273"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <realization id="8">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <dependency id="9">    
+    <end type="SOURCE" refId="7"/>    
     <end type="TARGET" refId="1"/>  
   </dependency>  
-  <dependency id="7">    
+  <dependency id="10">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="11">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <realization id="12">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <realization id="13">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <dependency id="14">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <realization id="15">    
     <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <realization id="16">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <dependency id="17">    
+    <end type="SOURCE" refId="7"/>    
     <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <dependency id="18">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="6"/>  
   </dependency>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
