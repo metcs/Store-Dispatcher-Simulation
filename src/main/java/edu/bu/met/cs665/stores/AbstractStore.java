@@ -1,11 +1,17 @@
 package edu.bu.met.cs665.stores;
 
 import java.util.List;
+import edu.bu.met.cs665.dispatchers.Dispatcher;
 import edu.bu.met.cs665.orders.Order;
 import edu.bu.met.cs665.products.Product;
 
 public abstract class AbstractStore implements Store {
   protected List<Product> products;
+  protected Dispatcher dispatcher;
+  
+  public AbstractStore(Dispatcher dispatcher){
+    this.dispatcher = dispatcher;
+  }
   
   public List<Product> getProducts(){
     return this.products;

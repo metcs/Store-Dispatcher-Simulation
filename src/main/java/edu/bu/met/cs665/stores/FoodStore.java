@@ -12,7 +12,8 @@ import edu.bu.met.cs665.products.Product;
 public class FoodStore extends AbstractStore{
 
 
-  public FoodStore(){
+  public FoodStore(Dispatcher dispatcher){
+    super(dispatcher);
     this.products = new ArrayList<>();
     this.products.add(new ColdMeal());
     this.products.add(new HotMeal());

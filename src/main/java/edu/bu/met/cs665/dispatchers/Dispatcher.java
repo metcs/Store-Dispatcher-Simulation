@@ -8,6 +8,7 @@ public interface Dispatcher {
   public void registerVehicle(Vehicle vehicle);
   public void removeVehicle(Vehicle vehicle);
   public void dispatchVehicle(Vehicle vehicle, Order order);
+  public void updateVehicleDistance(Vehicle vehicle, int distance);
   
   // Handle the interaction with the stores
   // Receive an order from a customer and add it to the collection of orders

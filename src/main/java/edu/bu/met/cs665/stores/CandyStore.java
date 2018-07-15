@@ -11,7 +11,8 @@ import edu.bu.met.cs665.products.SimpleChocolateBox;
 
 public class CandyStore extends AbstractStore{
 
-  public CandyStore(){
+  public CandyStore(Dispatcher dispatcher){
+    super(dispatcher);
     this.products = new ArrayList<>();
     this.products.add(new EliteChocolateBox());
     this.products.add(new SimpleChocolateBox());

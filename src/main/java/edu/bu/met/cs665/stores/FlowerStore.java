@@ -12,7 +12,8 @@ import edu.bu.met.cs665.products.SimpleFlowerArrangement;
 
 public class FlowerStore extends AbstractStore{
 
-  public FlowerStore(){
+  public FlowerStore(Dispatcher dispatcher){
+    super(dispatcher);
     this.products = new ArrayList<>();
     this.products.add(new SimpleFlowerArrangement());
     this.products.add(new EliteFlowerArrangement());

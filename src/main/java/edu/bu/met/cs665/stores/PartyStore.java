@@ -13,7 +13,8 @@ import edu.bu.met.cs665.products.SimpleChocolateBox;
 
 public class PartyStore extends AbstractStore{
   
-  public PartyStore(){
+  public PartyStore(Dispatcher dispatcher){
+    super(dispatcher);
     this.products = new ArrayList<>();
     this.products.add(new EliteFlowerArrangement());
     this.products.add(new HotMeal());
