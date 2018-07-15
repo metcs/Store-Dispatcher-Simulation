@@ -6,4 +6,8 @@ public abstract class AbstractProduct implements Product{
   public String getName(){
     return this.name;
   }
+  
+  public String toString(){
+    return this.getName();
+  }
 }

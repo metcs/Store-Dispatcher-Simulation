@@ -12,17 +12,12 @@ import edu.bu.met.cs665.products.SimpleFlowerArrangement;
 
 public class BirthdayStore extends AbstractStore{
 
-  public BirthdayStore(Dispatcher dispatcher){
-    super(dispatcher);
+  public BirthdayStore(){
     this.products = new ArrayList<>();
     this.products.add(new EliteChocolateBox());
     this.products.add(new SimpleFlowerArrangement());
   }
-  @Override
-  public Dispatcher getDispatcher(String dispatcherName) {
-    // TODO Auto-generated method stub
-    return null;
-  }
+
 
   @Override
   public void submitDeliveryRequest(Order order, Customer customer) {

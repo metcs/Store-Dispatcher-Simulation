@@ -11,9 +11,9 @@ public class TestCandyStore {
     this.candyStore = new CandyStore();
   }
 
-  @Test
-  public void test() {
-    fail("Not yet implemented");
-  }
+//  @Test
+//  public void test() {
+//    fail("Not yet implemented");
+//  }
 
 }

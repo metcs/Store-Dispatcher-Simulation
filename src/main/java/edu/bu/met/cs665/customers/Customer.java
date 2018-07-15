@@ -12,25 +12,43 @@ public class Customer {
     // This is for the purpose of randomly selecting products to purchase.
     static int maxNumItemsCustomerCanBuy = 10;
     private String storeName;
+    private Store store;
+    private int distanceFromStore;
     
     public Customer(String storeName){
       this.storeName = storeName;
+      store = setStore(this.storeName);
+      // Set a random distance from the store
+      distanceFromStore = new Random().nextInt(50);
+    }
+    
+    public int getDistanceFromStore(){
+      return this.distanceFromStore;
     }
     
     /**
      * This is the method that takes care of the steps to randomly placing an order for a customer.
      */
     public void order(){
-      Store store = getStore(this.storeName);
       List<Product> allProductsInStore = store.getProducts();
       List<Product> selectedProducts = selectProducts(allProductsInStore);
       placeOrder(store, selectedProducts);
     }
     
-   // Factory method for getting a store instance
-   private Store getStore(String storeName) {
+   /**
+    * Factory method for setting the store instance.
+    * @param storeName The name of the store to use as a lookup for the
+    *        specific store instance type.
+    * @return  The Store instance to be used.
+    * @Precondition storeName is a valid name of a store type.
+    */
+   private Store setStore(String storeName) {
     return StoreFactory.getStore(storeName);
   }
+   
+   public Store getStore(){
+     return this.store;
+   }
 
    // From a list of products, select the product to be submitted in the next order
    public List<Product> selectProducts(List<Product> allProducts) {
@@ -38,15 +56,16 @@ public class Customer {
     // Randomly choose the number of products to be purchased/selected
     int numProductsToBuy = new Random().nextInt(maxNumItemsCustomerCanBuy);
     // For the number of products to be chosen
+    int randomProductIndex;
     for(int i=0; i < numProductsToBuy; i++){
       // Add a random product from the list of all products to the list of selected products
-      int randomProductIndex = new Random().nextInt(allProducts.size()-1);
+      randomProductIndex = new Random().nextInt(allProducts.size());
       selectedProducts.add(allProducts.get(randomProductIndex));
     }
     return selectedProducts;
   }
    // Place an order at a store with the list of products in the order
    private void placeOrder(Store store, List<Product> products) {
-       store.createOrder(products);
+       store.createOrder(products, this);
   }
 }

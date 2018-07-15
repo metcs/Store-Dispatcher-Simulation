@@ -13,20 +13,28 @@ import edu.bu.met.cs665.stores.PartyStore;
 
 public class testCustomer {
 
-//  Customer customer;
-//  @Before
-//  public void setUp() throws Exception {
-//    customer = new Customer();
-//  }
-//
-//  // Test for the five types of stores
-//  @Test
-//  public void testForCorrectTypesOfStores() {
-//    assertThat(customer.getStore("Candy Store"), instanceOf(CandyStore.class));
-//    assertThat(customer.getStore("Flower Store"), instanceOf(FlowerStore.class));
-//    assertThat(customer.getStore("Food Store"), instanceOf(FoodStore.class));
-//    assertThat(customer.getStore("Birthday Store"), instanceOf(BirthdayStore.class));
-//    assertThat(customer.getStore("Party Store"), instanceOf(PartyStore.class));
-//  }
+  Customer customerCandyStore;
+  Customer customerFlowerStore;
+  Customer customerFoodStore;
+  Customer customerBirthdayStore;
+  Customer customerPartyStore;
+  @Before
+  public void setUp() throws Exception {
+    customerCandyStore = new Customer("Candy Store");
+    customerFlowerStore = new Customer("Flower Store");
+    customerFoodStore = new Customer("Food Store");
+    customerBirthdayStore = new Customer("Birthday Store");
+    customerPartyStore = new Customer("Party Store");
+  }
+
+  // Test for the five types of stores
+  @Test
+  public void testForCorrectTypesOfStores() {
+    assertThat(customerCandyStore.getStore(), instanceOf(CandyStore.class));
+    assertThat(customerFlowerStore.getStore(), instanceOf(FlowerStore.class));
+    assertThat(customerFoodStore.getStore(), instanceOf(FoodStore.class));
+    assertThat(customerBirthdayStore.getStore(), instanceOf(BirthdayStore.class));
+    assertThat(customerPartyStore.getStore(), instanceOf(PartyStore.class));
+  }
 
 }

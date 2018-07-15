@@ -1,25 +1,23 @@
 package edu.bu.met.cs665.stores;
 
-import edu.bu.met.cs665.dispatchers.Dispatcher;
-
 public class StoreFactory {
-    static public Store getStore(String storeName, Dispatcher dispatcher){
+    static public Store getStore(String storeName){
       Store store = null;
       switch(storeName){
         case "Candy Store":
-          store = new CandyStore(dispatcher);
+          store = new CandyStore();
           break;
         case "Flower Store":
-          store = new FlowerStore(dispatcher);
+          store = new FlowerStore();
           break;
         case "Food Store":
-          store = new FoodStore(dispatcher);
+          store = new FoodStore();
           break;
         case "Birthday Store":
-          store = new BirthdayStore(dispatcher);
+          store = new BirthdayStore();
           break;
         case "Party Store":
-          store = new PartyStore(dispatcher);
+          store = new PartyStore();
           break;
          default:
            store = null;

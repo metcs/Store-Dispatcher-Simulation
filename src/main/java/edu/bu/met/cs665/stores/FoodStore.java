@@ -12,17 +12,12 @@ import edu.bu.met.cs665.products.Product;
 public class FoodStore extends AbstractStore{
 
 
-  public FoodStore(Dispatcher dispatcher){
-    super(dispatcher);
+  public FoodStore(){
     this.products = new ArrayList<>();
     this.products.add(new ColdMeal());
     this.products.add(new HotMeal());
   }
-  @Override
-  public Dispatcher getDispatcher(String dispatcherName) {
-    // TODO Auto-generated method stub
-    return null;
-  }
+
 
   @Override
   public void submitDeliveryRequest(Order order, Customer customer) {

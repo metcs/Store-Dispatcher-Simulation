@@ -13,8 +13,7 @@ import edu.bu.met.cs665.products.SimpleChocolateBox;
 
 public class PartyStore extends AbstractStore{
   
-  public PartyStore(Dispatcher dispatcher){
-    super(dispatcher);
+  public PartyStore(){
     this.products = new ArrayList<>();
     this.products.add(new EliteFlowerArrangement());
     this.products.add(new HotMeal());
@@ -22,11 +21,6 @@ public class PartyStore extends AbstractStore{
     this.products.add(new SimpleChocolateBox());
   }
 
-  @Override
-  public Dispatcher getDispatcher(String dispatcherName) {
-    // TODO Auto-generated method stub
-    return null;
-  }
 
   @Override
   public void submitDeliveryRequest(Order order, Customer customer) {

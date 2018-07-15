@@ -1,3 +1,5 @@
+Dispatcher is a singleton
+
 # Project Template
 
 This is a Java Maven Project Template
