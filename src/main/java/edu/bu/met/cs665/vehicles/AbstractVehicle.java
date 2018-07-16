@@ -23,7 +23,7 @@ public abstract class AbstractVehicle implements Vehicle {
    *and register with the dispatcher.
    * 
    */
-  public AbstractVehicle(int distanceFromStore){
+  public AbstractVehicle(){
     // Dispatcher is a singleton
     this.dispatcher = StoreDispatcher.getInstance();
     this.distanceFromEachStore = this.dispatcher.registerVehicle(this);

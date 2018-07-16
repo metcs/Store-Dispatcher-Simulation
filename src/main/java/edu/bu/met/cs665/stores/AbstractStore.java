@@ -23,10 +23,7 @@ public abstract class AbstractStore implements Store {
 
   public void createOrder(List<Product> products, Customer customer){
     Order order =  new Order(products, customer);
-    System.out.println("A new order has been received with the following products: ");
-    for(Product product: order.getProducts()){
-      System.out.println(product);
-    }
+    
   }
   
   public Dispatcher getDispatcher(){

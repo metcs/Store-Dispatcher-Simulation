@@ -17,6 +17,9 @@ import edu.bu.met.cs665.vehicles.Vehicle;
 public class StoreDispatcher implements Dispatcher {
   List<Vehicle> registeredVehicles = new ArrayList<>();
   List<Store> registeredStores = new ArrayList<>();
+  List<Order> ordersNotScheduled = new ArrayList<>();
+  List<Order> ordersInTransit = new ArrayList<>();
+  List<Order> ordersDeliveryComplete = new ArrayList<>();
   
   private static  StoreDispatcher storeDispatcherInstance;
   
@@ -34,6 +37,18 @@ public class StoreDispatcher implements Dispatcher {
     return storeDispatcherInstance;
   }
   
+  public List<Order> getOrdersNotScheduled() {
+    return ordersNotScheduled;
+  }
+
+  public List<Order> getOrdersInTransit() {
+    return ordersInTransit;
+  }
+
+  public List<Order> getOrdersDeliveryComplete() {
+    return ordersDeliveryComplete;
+  }
+
   /**
    * Method for registering a vehicle with the dispatcher.  Upon successful
    * registration with the dispatcher, a map of is returned that assigns the 
@@ -78,10 +93,17 @@ public class StoreDispatcher implements Dispatcher {
 
   }
 
+  /**
+   * Receives a new order from a store and adds it to the list
+   * of orders that have not been scheduled.
+   * @postcondition The given order has been added to the OrdersNotScheduled List
+   * @param order the order to be added to the list of orders not scheduled
+   */
   @Override
   public void receiveOrder(Order order) {
-    // TODO Auto-generated method stub
-
+      if(!ordersNotScheduled.contains(order)){
+        ordersNotScheduled.add(order);
+      }
   }
 
   @Override
