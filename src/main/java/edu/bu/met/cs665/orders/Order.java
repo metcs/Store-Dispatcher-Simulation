@@ -13,6 +13,7 @@ public class Order {
     public Order(List<Product> products, Customer customer, Store store){
       this.products = products;
       this.customer = customer;
+      this.store = store;
     }
     
     public Store getStore(){

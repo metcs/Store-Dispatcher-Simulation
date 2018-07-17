@@ -1,6 +1,7 @@
 package edu.bu.met.cs665.vehicles;
 
 import java.util.Map;
+import java.util.UUID;
 import edu.bu.met.cs665.orders.Order;
 import edu.bu.met.cs665.stores.Store;
 
@@ -12,4 +13,6 @@ public interface Vehicle {
     public void toggleStatus();
     public Map<Store, Integer> getDistancesFromEachStore();
     public void deliverOrder(Order order, int totalDistance);
+    public void setAvailableForDelivery(boolean available);
+    public UUID getVIN();
 }

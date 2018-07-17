@@ -75,6 +75,10 @@ public class StoreDispatcher implements Dispatcher {
     Vehicle deliveryVehicle = null;
     int currentSmallestTotalDistance = 0;
     while(this.getOrdersNotScheduled().size() > 0){
+      // Remove any orders from the ordersNotScheduled list that are in the scheduled/in-transit list.  This is the way orders are removed from 
+      // the list of orders to be scheduled for transit and is removed at this point to avoid a ConcurrentModificationException, as 
+      // detailed later in this method.
+      this.ordersNotScheduled.removeAll(this.ordersInTransit);
       for(Order order: this.getOrdersNotScheduled()){
         // Find the vehicle that is marked as available for deliveries and has the smallest total distance
         for(Vehicle vehicle: this.registeredVehicles){
@@ -86,19 +90,27 @@ public class StoreDispatcher implements Dispatcher {
               deliveryVehicle = vehicle;
               // Current smallest total distance will be the first first vehicle we check by default.
               currentSmallestTotalDistance = totalVehicleDistance;
-            }else if(totalVehicleDistance < totalVehicleDistance){
+            }else if(totalVehicleDistance < currentSmallestTotalDistance){
               deliveryVehicle = vehicle;
               currentSmallestTotalDistance = totalVehicleDistance;
             }
-            // If a delivery vehicle has been found, assign it to deliver this order
-            if(deliveryVehicle != null){
-              // Assign order to vehicle
-              deliveryVehicle.deliverOrder(order, currentSmallestTotalDistance);
-              // Move order to list of scheduled orders
-              // Set deliveryVehicle back to null to begin the process check again
-            }
           }
         }
+        // If a delivery vehicle has been found, assign it to deliver this order
+      if(deliveryVehicle != null){
+        // Assign order to vehicle
+//        Thread deliveryThread = new Thread(() -> deliveryVehicle.deliverOrder(order, currentSmallestTotalDistance));
+        deliveryVehicle.deliverOrder(order, currentSmallestTotalDistance);
+        // Orders that are scheduled should be moved to the ordersInTransit list.  After we are done iterating through the orders,
+        // we need to remove any orders from the ordersNotScheduled list that are now in transit.  Waiting to do this will help
+        // avoid the ConcurrentModifacation Exemption that will happen if we try removing from the ordersNotScheduled list while
+        // iterating on it.
+        this.ordersInTransit.add(order);
+        // Set deliveryVehicle back to null to begin the process check again
+        deliveryVehicle = null;
+        // Vehicle has been found, so break out of the vehicle for loop and back to the orders for loop
+        break;
+      }
       }
     }
   }
@@ -112,67 +124,13 @@ public class StoreDispatcher implements Dispatcher {
    * @return the total distance the vehicle will travel to complete this delivery.
    */
   public static int getTotalDistance(Store store, Customer customer, Vehicle vehicle){
-    System.out.println("StoreDispatcher distanceFromEachStore: " + customer.getDistanceFromEachStore());
-//    customer.getDistanceFromEachStore().get(customer.getDistanceFromEachStore().keySet().);
     Store storeFromKeySet = customer.getDistanceFromEachStore().keySet().iterator().next();
-    System.out.println("store: " + store);
-    System.out.println("key set store: " + storeFromKeySet);
-    System.out.println("==" + (store == storeFromKeySet));
-    System.out.println(customer.getDistanceFromEachStore().containsKey(store));
     int customerToStoreDistance = customer.getDistanceFromEachStore().get(store);
-    int vehicleToStoreDistance = vehicle.getDistancesFromEachStore().get(vehicle);
+    int vehicleToStoreDistance = vehicle.getDistancesFromEachStore().get(store);
     return customerToStoreDistance + vehicleToStoreDistance;
   }
   
-//  @Override
-//  public int hashCode() {
-//    final int prime = 31;
-//    int result = 1;
-//    result =
-//        prime * result + ((ordersDeliveryComplete == null) ? 0 : ordersDeliveryComplete.hashCode());
-//    result = prime * result + ((ordersInTransit == null) ? 0 : ordersInTransit.hashCode());
-//    result = prime * result + ((ordersNotScheduled == null) ? 0 : ordersNotScheduled.hashCode());
-//    result = prime * result + ((registeredStores == null) ? 0 : registeredStores.hashCode());
-//    result = prime * result + ((registeredVehicles == null) ? 0 : registeredVehicles.hashCode());
-//    return result;
-//  }
-//
-//  @Override
-//  public boolean equals(Object obj) {
-//    if (this == obj)
-//      return true;
-//    if (obj == null)
-//      return false;
-//    if (getClass() != obj.getClass())
-//      return false;
-//    StoreDispatcher other = (StoreDispatcher) obj;
-//    if (ordersDeliveryComplete == null) {
-//      if (other.ordersDeliveryComplete != null)
-//        return false;
-//    } else if (!ordersDeliveryComplete.equals(other.ordersDeliveryComplete))
-//      return false;
-//    if (ordersInTransit == null) {
-//      if (other.ordersInTransit != null)
-//        return false;
-//    } else if (!ordersInTransit.equals(other.ordersInTransit))
-//      return false;
-//    if (ordersNotScheduled == null) {
-//      if (other.ordersNotScheduled != null)
-//        return false;
-//    } else if (!ordersNotScheduled.equals(other.ordersNotScheduled))
-//      return false;
-//    if (registeredStores == null) {
-//      if (other.registeredStores != null)
-//        return false;
-//    } else if (!registeredStores.equals(other.registeredStores))
-//      return false;
-//    if (registeredVehicles == null) {
-//      if (other.registeredVehicles != null)
-//        return false;
-//    } else if (!registeredVehicles.equals(other.registeredVehicles))
-//      return false;
-//    return true;
-//  }
+
 
   /**
    * 

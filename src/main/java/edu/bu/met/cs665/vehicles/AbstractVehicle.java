@@ -37,14 +37,35 @@ public abstract class AbstractVehicle implements Vehicle {
    */
   public void deliverOrder(Order order, int totalDistance){
     // Vehicle is not currently available for delivery
-    availableForDelivery = false;
-    System.out.println("Vehicle " + VIN + " has been assigned a new order with a total distance of: " + totalDistance);
+//    availableForDelivery = false;
+//    System.out.println("Vehicle " + VIN + " has been assigned a new order with a total distance of: " + totalDistance);
+//    while(totalDistance > 0){
+//      totalDistance--;
+//      try {
+//        Thread.sleep(100L);
+//        System.out.println("Distance remaining is: " + totalDistance);
+//      } catch (InterruptedException e) {
+//        // TODO Auto-generated catch block
+//        e.printStackTrace();
+//      }
+//    }
+//    this.availableForDelivery = true;
+    Thread deliveryThread = new Thread(new VehicleThread(this, order, totalDistance));
+    deliveryThread.start();
   }
   /**
    * Updates the distance 
    */
   public void updateDistance(int distanceChanged){
     
+  }
+  
+  public UUID getVIN(){
+    return this.VIN;
+  }
+  
+  public void setAvailableForDelivery(boolean available){
+    this.availableForDelivery = available;
   }
   
   public Map<Store, Integer> getDistancesFromEachStore(){
