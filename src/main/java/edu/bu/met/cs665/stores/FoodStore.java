@@ -25,5 +25,8 @@ public class FoodStore extends AbstractStore{
     
   }
 
+  public String toString(){
+    return "Food Store";
+  }
 
 }

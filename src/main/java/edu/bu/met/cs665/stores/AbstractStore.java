@@ -15,7 +15,6 @@ public abstract class AbstractStore implements Store {
     // The StoreDispatcher object is a singleton
     this.dispatcher = StoreDispatcher.getInstance();
     this.dispatcher.registerStore(this);
-    System.out.println("In the abstract store is: " + this);
   }
   
 

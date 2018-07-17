@@ -25,5 +25,7 @@ public class FlowerStore extends AbstractStore{
     
   }
 
-
+  public String toString(){
+    return "Flower Store";
+  }
 }

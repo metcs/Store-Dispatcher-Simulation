@@ -26,7 +26,10 @@ public class Order {
     public String toString(){
       StringBuffer returnString = new StringBuffer();
       for(Product product: products){
-        returnString.append(product.toString());
+        returnString.append(product.toString() + ", ");
+      }
+      if(returnString.length() > 0){
+        return returnString.toString().substring(0, returnString.length()-2);
       }
       return returnString.toString();
     }

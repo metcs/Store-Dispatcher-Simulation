@@ -115,6 +115,14 @@ public class StoreDispatcher implements Dispatcher {
     }
   }
   
+  public void removeOrderFromInTransitOrders(Order order){
+    if(this.ordersInTransit.contains(order)){
+      this.ordersInTransit.remove(order);
+    }
+  }
+  
+
+  
   /**
    * Given a store and customer instance, computes the total distance between the vehicle and the store
    * and the customer and the store.  This is the rough approximation of how far the vehicle will need to travel.

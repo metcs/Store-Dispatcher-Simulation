@@ -26,4 +26,7 @@ public class BirthdayStore extends AbstractStore{
     
   }
 
+  public String toString(){
+    return "Birthday Store";
+  }
 }

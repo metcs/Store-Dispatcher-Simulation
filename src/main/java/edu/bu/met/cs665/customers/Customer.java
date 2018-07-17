@@ -23,9 +23,7 @@ public class Customer {
       store = setStore(this.storeName);
       // Get the initial random assignment of distance for this customer from each of the
       // registered stores.
-      System.out.println("About to call: " + storeName);
       this.distanceFromEachStore = StoreDispatcher.getInstance().makeRandomInitialDistanceAssignments();
-      System.out.println("After: " + this.distanceFromEachStore);
       // Set a random distance from the store
       distanceFromStore = new Random().nextInt(50);
     }

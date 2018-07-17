@@ -15,4 +15,11 @@ public interface Vehicle {
     public void deliverOrder(Order order, int totalDistance);
     public void setAvailableForDelivery(boolean available);
     public UUID getVIN();
+    public Order getCurrentOrder();
+    public void setCurrentOrderToNull();
+    public void setDistanceTravelledOnThisOrder(int distanceTravelledOnThisORder);
+    public int getDistanceTravelledOnThisOrder();
+    public void setDistanceLeftToTravelOnThisOrder(int distanceLeftToTravelOnThisOrder);
+    public int getDistanceLeftToTravelOnThisOrder();
+    public void setDistanceFromEachStore(Map<Store, Integer> newDistanceFromEachStore);
 }

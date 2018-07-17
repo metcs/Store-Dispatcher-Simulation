@@ -28,4 +28,7 @@ public class PartyStore extends AbstractStore{
     
   }
 
+  public String toString(){
+    return "Party Store";
+  }
 }

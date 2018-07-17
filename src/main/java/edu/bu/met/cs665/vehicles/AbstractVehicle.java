@@ -14,6 +14,30 @@ public abstract class AbstractVehicle implements Vehicle {
   protected Map<Store, Integer> distanceFromEachStore;
   protected boolean availableForDelivery;
   protected UUID VIN;
+  protected Order currentOrder;
+  protected int distanceTravelledOnThisOrder;
+  protected int distanceLeftToTravelOnThisOrder;
+  
+  @Override
+  public int getDistanceTravelledOnThisOrder() {
+    return distanceTravelledOnThisOrder;
+  }
+
+  @Override
+  public void setDistanceTravelledOnThisOrder(int distanceTravelledOnThisOrder) {
+    this.distanceTravelledOnThisOrder = distanceTravelledOnThisOrder;
+  }
+
+  @Override
+  public int getDistanceLeftToTravelOnThisOrder() {
+    return distanceLeftToTravelOnThisOrder;
+  }
+
+  @Override
+  public void setDistanceLeftToTravelOnThisOrder(int distanceLeftToTravelOnThisOrder) {
+    this.distanceLeftToTravelOnThisOrder = distanceLeftToTravelOnThisOrder;
+  }
+
   /**
    * Send the dispatcher instance the updated distance for this vehicle.
    */
@@ -50,14 +74,31 @@ public abstract class AbstractVehicle implements Vehicle {
 //      }
 //    }
 //    this.availableForDelivery = true;
+    // Run the delivery on a separate thread so the deliveries can happen concurrently
+    // This is the current order on the vehicle.
+    this.currentOrder = order;
     Thread deliveryThread = new Thread(new VehicleThread(this, order, totalDistance));
     deliveryThread.start();
+
+  }
+  
+  /**
+   * After a vehicle has delivered their order, the order instance for the vehicle
+   * needs to be set back to null to signify that the vehicle doesn't have an order
+   * on board.
+   */
+  public void setCurrentOrderToNull(){
+    this.currentOrder = null;
   }
   /**
    * Updates the distance 
    */
   public void updateDistance(int distanceChanged){
     
+  }
+  
+  public Order getCurrentOrder(){
+    return this.currentOrder;
   }
   
   public UUID getVIN(){
@@ -87,6 +128,10 @@ public abstract class AbstractVehicle implements Vehicle {
     this.distanceFromEachStore = this.dispatcher.registerVehicle(this);
     this.availableForDelivery = true;
     VIN = UUID.randomUUID();
+  }
+  
+  public void setDistanceFromEachStore(Map<Store, Integer> newDistanceFromEachStore){
+    
   }
 
 }
