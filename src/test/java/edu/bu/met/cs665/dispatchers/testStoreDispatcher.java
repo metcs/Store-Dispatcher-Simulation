@@ -10,6 +10,7 @@ import org.junit.Test;
 import edu.bu.met.cs665.customers.Customer;
 import edu.bu.met.cs665.orders.Order;
 import edu.bu.met.cs665.products.Product;
+import edu.bu.met.cs665.stores.BirthdayStore;
 import edu.bu.met.cs665.vehicles.VanVehicle;
 import edu.bu.met.cs665.vehicles.Vehicle;
 
@@ -30,7 +31,6 @@ public class testStoreDispatcher {
     // Get the current list of vehicles
     List<Vehicle> initialVehiclesState = dispatcher.getRegisteredVehicles();
     // Test that the vehicle instance is not in the first list
-    System.out.println("This one:");
     assertTrue(initialVehiclesState.contains(vehicle));
     // Register vehicle
     dispatcher.registerVehicle(vehicle);
@@ -80,7 +80,7 @@ public class testStoreDispatcher {
   @Test
   public void testRecieveOrderAddsToOrdersToBeScheduledList(){
     
-    Order orderToBeTested = new Order(new ArrayList<Product>(), new Customer("Birthday Store"));
+    Order orderToBeTested = new Order(new ArrayList<Product>(), new Customer("Birthday Store"), new BirthdayStore());
     List<Order> ordersStateBeforeAddedOrder = ((StoreDispatcher) dispatcher).getOrdersNotScheduled();
     // Check that the order is not in the first state
     assertFalse(ordersStateBeforeAddedOrder.contains(orderToBeTested));

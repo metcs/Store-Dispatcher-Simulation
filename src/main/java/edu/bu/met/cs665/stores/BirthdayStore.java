@@ -13,6 +13,7 @@ import edu.bu.met.cs665.products.SimpleFlowerArrangement;
 public class BirthdayStore extends AbstractStore{
 
   public BirthdayStore(){
+    super();
     this.products = new ArrayList<>();
     this.products.add(new EliteChocolateBox());
     this.products.add(new SimpleFlowerArrangement());

@@ -2,7 +2,9 @@ package edu.bu.met.cs665.customers;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
+import edu.bu.met.cs665.dispatchers.StoreDispatcher;
 import edu.bu.met.cs665.products.Product;
 import edu.bu.met.cs665.stores.Store;
 import edu.bu.met.cs665.stores.StoreFactory;
@@ -14,12 +16,22 @@ public class Customer {
     private String storeName;
     private Store store;
     private int distanceFromStore;
+    private Map<Store, Integer> distanceFromEachStore;
     
     public Customer(String storeName){
       this.storeName = storeName;
       store = setStore(this.storeName);
+      // Get the initial random assignment of distance for this customer from each of the
+      // registered stores.
+      System.out.println("About to call: " + storeName);
+      this.distanceFromEachStore = StoreDispatcher.getInstance().makeRandomInitialDistanceAssignments();
+      System.out.println("After: " + this.distanceFromEachStore);
       // Set a random distance from the store
       distanceFromStore = new Random().nextInt(50);
+    }
+    
+    public Map<Store, Integer> getDistanceFromEachStore(){
+      return this.distanceFromEachStore;
     }
     
     public int getDistanceFromStore(){

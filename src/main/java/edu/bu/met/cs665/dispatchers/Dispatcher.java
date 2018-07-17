@@ -15,6 +15,7 @@ public interface Dispatcher {
   public List<Vehicle> getRegisteredVehicles();
   public void registerStore(Store store);
   public void removeStore(Store store);
+  public void dispatchVehicles();
   
   // Handle the interaction with the stores
   // Receive an order from a customer and add it to the collection of orders
