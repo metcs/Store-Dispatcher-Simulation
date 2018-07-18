@@ -6,4 +6,16 @@ public EliteFlowerArrangement() {
     this.name = "Elite Flower Arrangement";
   }
 
+@Override
+public boolean needsFreezer() {
+  // TODO Auto-generated method stub
+  return false;
+}
+
+@Override
+public boolean needsKeepWarm() {
+  // TODO Auto-generated method stub
+  return false;
+}
+
 }

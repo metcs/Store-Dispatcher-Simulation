@@ -15,12 +15,15 @@ import edu.bu.met.cs665.vehicles.Vehicle;
  * @author Richard Hanks
  *
  */
+
+
 public class StoreDispatcher implements Dispatcher {
   List<Vehicle> registeredVehicles = new ArrayList<>();
   List<Store> registeredStores = new ArrayList<>();
   List<Order> ordersNotScheduled = new ArrayList<>();
   List<Order> ordersInTransit = new ArrayList<>();
   List<Order> ordersDeliveryComplete = new ArrayList<>();
+  private boolean increasedTraffic = false;
   
   private static StoreDispatcher storeDispatcherInstance;
   
@@ -85,9 +88,23 @@ public class StoreDispatcher implements Dispatcher {
       for(Order order: this.getOrdersNotScheduled()){
         // Find the vehicle that is marked as available for deliveries and has the smallest total distance
         for(Vehicle vehicle: this.registeredVehicles){
+          // If the order needs to be frozen and the total distance to travel > 2, check that the current vehicle has a freezer
           // If vehicle is available for deliveries
           int totalVehicleDistance = StoreDispatcher.getTotalDistance(order.getStore(), order.getCustomer(), vehicle);
+          // getStatus() tells us if the vehicle is available for getting deliveries
           if(vehicle.getStatus()){
+            // If this order is frozen and either the total distance is greater than two or if there is a high traffic event
+            if(order.getKeepFrozen() && (totalVehicleDistance > 2 || this.increasedTraffic)){
+              // Current vehicle is unable to transport this frozen product, so continue to the next vehicle
+              if(!vehicle.canTransportFrozen()){
+                continue;
+              }else{
+                System.out.println("***********************************");
+                System.out.println("Frozen meal assigned to vehicle " + vehicle.getVIN());
+                System.out.println("***********************************");
+
+              }
+            }
             // If this is the first time through the vehicle for loop, set deliveryVehicle to the first instance
             if (deliveryVehicle == null){
               deliveryVehicle = vehicle;
@@ -220,6 +237,17 @@ public class StoreDispatcher implements Dispatcher {
     if(this.registeredStores.contains(store)){
       this.registeredStores.remove(this.registeredStores.indexOf(store));
     }
+  }
+  
+  public void setIncreasedTraffic(boolean increased){
+    this.increasedTraffic = increased;
+    System.out.println("************************************************************");
+    if(this.increasedTraffic){
+      System.out.println("There is increased traffic at this time.");
+    }else{
+      System.out.println("Traffic levels are normal.");
+    }
+    System.out.println("************************************************************");
   }
 
 }

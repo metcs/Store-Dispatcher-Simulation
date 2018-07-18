@@ -17,6 +17,7 @@ public interface Dispatcher {
   public void removeStore(Store store);
   public void dispatchVehicles();
   public void displayMessageFromVehicle(String message);
+  public void setIncreasedTraffic(boolean increased);
   
   // Handle the interaction with the stores
   // Receive an order from a customer and add it to the collection of orders

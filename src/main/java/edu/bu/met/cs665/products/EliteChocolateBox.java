@@ -6,4 +6,16 @@ public class EliteChocolateBox extends GiftChocolateBox {
     this.name = "Elite Chocolate Box";
   }
 
+  @Override
+  public boolean needsFreezer() {
+    // TODO Auto-generated method stub
+    return false;
+  }
+
+  @Override
+  public boolean needsKeepWarm() {
+    // TODO Auto-generated method stub
+    return false;
+  }
+
 }

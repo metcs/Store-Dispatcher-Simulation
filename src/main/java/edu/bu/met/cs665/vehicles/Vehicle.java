@@ -23,4 +23,5 @@ public interface Vehicle {
     public int getDistanceLeftToTravelOnThisOrder();
     public void setDistanceFromEachStore(Map<Store, Integer> newDistanceFromEachStore);
     public void sendStatusMessageToDispatch(String message);
+    public boolean canTransportFrozen();
 }

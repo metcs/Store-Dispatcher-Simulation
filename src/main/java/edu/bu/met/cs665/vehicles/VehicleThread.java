@@ -16,6 +16,7 @@ public class VehicleThread implements Runnable{
   private Order order;
   private int totalDistance;
   private Dispatcher dispatcher;
+  private boolean increasedTraffic;
   
   
   public VehicleThread(Vehicle vehicle, Order order, int totalDistance){
@@ -23,6 +24,7 @@ public class VehicleThread implements Runnable{
     this.order = order;
     this.totalDistance = totalDistance;
     this.dispatcher = StoreDispatcher.getInstance();
+    this.increasedTraffic = false;
   }
   @Override
   public void run() {
@@ -66,5 +68,7 @@ public class VehicleThread implements Runnable{
     // Order has been delivered, this vehicle no longer has an order so set to null
     vehicle.setCurrentOrderToNull();
   }
+  
+
 
 }

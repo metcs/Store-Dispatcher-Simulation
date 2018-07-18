@@ -9,11 +9,24 @@ public class Order {
     private Customer customer;
     List<Product> products;
     private Store store;
+    private boolean keepOrderFrozen;
     
     public Order(List<Product> products, Customer customer, Store store){
+      // Determine if this order will need to be frozen based on the products in the order
+      for(Product product: products){
+        if(product.needsFreezer()){
+          // If a single product needs to be frozen, the whole order needs to be frozen.
+          this.keepOrderFrozen = true;
+          break;
+        }
+      }
       this.products = products;
       this.customer = customer;
       this.store = store;
+    }
+    
+    public boolean getKeepFrozen(){
+      return this.keepOrderFrozen;
     }
     
     public Store getStore(){

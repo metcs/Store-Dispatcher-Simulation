@@ -6,4 +6,16 @@ public class HotMeal extends Food{
     this.name = "Hot Meal";
   }
 
+  @Override
+  public boolean needsFreezer() {
+    // TODO Auto-generated method stub
+    return false;
+  }
+
+  @Override
+  public boolean needsKeepWarm() {
+    // TODO Auto-generated method stub
+    return true;
+  }
+
 }
