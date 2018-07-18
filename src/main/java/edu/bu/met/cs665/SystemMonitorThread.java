@@ -25,6 +25,8 @@ public class SystemMonitorThread implements Runnable{
         ((StoreDispatcher) this.dispatcher).getOrdersInTransit().size() > 0){
       timeCounter++;
       System.out.println("\n\n Beginning time cycle number " + timeCounter + "\n\n");
+      System.out.println("Number of orders waiting to be scheduled for delivery: " + ((StoreDispatcher) this.dispatcher).getOrdersNotScheduled().size());
+      System.out.println("Number of orders in transit: " + ((StoreDispatcher) this.dispatcher).getOrdersInTransit().size());
       // Get all vehicles from dispatcher
       for(Vehicle vehicle: this.dispatcher.getRegisteredVehicles()){
         System.out.println("\n-----------------\n");
@@ -44,7 +46,7 @@ public class SystemMonitorThread implements Runnable{
       }
 //      System.out.println("\n\n Beginning time cycle number " + timeCounter + "\n\n");
       try {
-        Thread.sleep(1000);
+        Thread.sleep(100);
       } catch (InterruptedException e) {
         // TODO Auto-generated catch block
         e.printStackTrace();

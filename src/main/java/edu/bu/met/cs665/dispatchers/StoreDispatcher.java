@@ -124,7 +124,15 @@ public class StoreDispatcher implements Dispatcher {
     }
   }
   
-
+  /**
+   * When a vehicle has an updated status, it will send a message back
+   * to the dispatcher and this message will be broadcast to std out.
+   * @param message The message sent from a vehicle.
+   */
+  public void displayMessageFromVehicle(String message){
+    System.out.println(message);
+    System.out.println("----------------------------------------------------------------------------------------------\n");
+  }
   
   /**
    * Given a store and customer instance, computes the total distance between the vehicle and the store
@@ -151,10 +159,11 @@ public class StoreDispatcher implements Dispatcher {
    */
   public Map<Store, Integer> makeRandomInitialDistanceAssignments(){
     Map<Store, Integer> assignmentMapping = new HashMap<>();
+    int maxDistanceFromStore = 20;
     int random;
     for(Store store: this.registeredStores){
 //      System.out.println("Store is: " + store);
-      random = new Random().nextInt(50);
+      random = new Random().nextInt(maxDistanceFromStore);
       assignmentMapping.put(store, random);
     }
 //    System.out.println("assignmentMapping is: " + assignmentMapping);

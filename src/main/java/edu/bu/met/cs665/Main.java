@@ -62,8 +62,8 @@ public class Main {
     Vehicle vehicle9 = new VanVehicle();
     Vehicle vehicle10 = new TaxiVehicle();
     
-    Thread systemMonitorThread = new Thread(new SystemMonitorThread());
-    systemMonitorThread.start();
+//    Thread systemMonitorThread = new Thread(new SystemMonitorThread());
+//    systemMonitorThread.start();
     Dispatcher dispatcher = StoreDispatcher.getInstance();
     dispatcher.dispatchVehicles();
     // 1 high traffic event

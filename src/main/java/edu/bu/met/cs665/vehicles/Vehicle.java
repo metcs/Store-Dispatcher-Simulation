@@ -22,4 +22,5 @@ public interface Vehicle {
     public void setDistanceLeftToTravelOnThisOrder(int distanceLeftToTravelOnThisOrder);
     public int getDistanceLeftToTravelOnThisOrder();
     public void setDistanceFromEachStore(Map<Store, Integer> newDistanceFromEachStore);
+    public void sendStatusMessageToDispatch(String message);
 }

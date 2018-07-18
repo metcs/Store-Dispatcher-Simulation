@@ -77,6 +77,7 @@ public abstract class AbstractVehicle implements Vehicle {
     // Run the delivery on a separate thread so the deliveries can happen concurrently
     // This is the current order on the vehicle.
     this.currentOrder = order;
+    this.setAvailableForDelivery(false);
     Thread deliveryThread = new Thread(new VehicleThread(this, order, totalDistance));
     deliveryThread.start();
 
@@ -107,6 +108,11 @@ public abstract class AbstractVehicle implements Vehicle {
   
   public void setAvailableForDelivery(boolean available){
     this.availableForDelivery = available;
+    if(this.availableForDelivery){
+      this.sendStatusMessageToDispatch("Vehicle " + this.VIN + " is now available for deliveries");
+    }else{
+      this.sendStatusMessageToDispatch("Vehicle " + this.VIN + " has a new order and is no longer available for deliveries");
+    }
   }
   
   public Map<Store, Integer> getDistancesFromEachStore(){
@@ -117,6 +123,14 @@ public abstract class AbstractVehicle implements Vehicle {
     System.out.println("The following message has been received from dispatch: " + message);
   }
   
+  /**
+   * When the status of the vehicle changes, sends the updated status
+   * to the dispatcher for display on the screen
+   * @param message The message to be sent to the dispatcher
+   */
+  public void sendStatusMessageToDispatch(String message){
+    this.dispatcher.displayMessageFromVehicle(message);
+  }
   /**
    *Assign the dispatcher instance to the singleton StoreDispatcher
    *and register with the dispatcher.
