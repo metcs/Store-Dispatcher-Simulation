@@ -22,14 +22,17 @@ public class StoreDispatcher implements Dispatcher {
   List<Order> ordersInTransit = new ArrayList<>();
   List<Order> ordersDeliveryComplete = new ArrayList<>();
   
-  private static  StoreDispatcher storeDispatcherInstance;
+  private static StoreDispatcher storeDispatcherInstance;
   
   static{
-    storeDispatcherInstance = new StoreDispatcher();
-    
+    storeDispatcherInstance = new StoreDispatcher();  
   }
 
 
+  // Restrict access to the constructor
+  private StoreDispatcher(){
+    
+  }
   /**
    * Method for getting the singleton StoreDispatcher instance.
    * @return The singleton StoreDispatcher instance

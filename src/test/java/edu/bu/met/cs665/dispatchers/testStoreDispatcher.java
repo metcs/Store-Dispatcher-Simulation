@@ -11,6 +11,7 @@ import edu.bu.met.cs665.customers.Customer;
 import edu.bu.met.cs665.orders.Order;
 import edu.bu.met.cs665.products.Product;
 import edu.bu.met.cs665.stores.BirthdayStore;
+import edu.bu.met.cs665.stores.StoreFactory;
 import edu.bu.met.cs665.vehicles.VanVehicle;
 import edu.bu.met.cs665.vehicles.Vehicle;
 
@@ -80,7 +81,7 @@ public class testStoreDispatcher {
   @Test
   public void testRecieveOrderAddsToOrdersToBeScheduledList(){
     
-    Order orderToBeTested = new Order(new ArrayList<Product>(), new Customer("Birthday Store"), new BirthdayStore());
+    Order orderToBeTested = new Order(new ArrayList<Product>(), new Customer(StoreFactory.getStore("Birthday Store")), new BirthdayStore());
     List<Order> ordersStateBeforeAddedOrder = ((StoreDispatcher) dispatcher).getOrdersNotScheduled();
     // Check that the order is not in the first state
     assertFalse(ordersStateBeforeAddedOrder.contains(orderToBeTested));

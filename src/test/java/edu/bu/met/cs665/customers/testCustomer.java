@@ -9,6 +9,8 @@ import edu.bu.met.cs665.stores.CandyStore;
 import edu.bu.met.cs665.stores.FlowerStore;
 import edu.bu.met.cs665.stores.FoodStore;
 import edu.bu.met.cs665.stores.PartyStore;
+import edu.bu.met.cs665.stores.Store;
+import edu.bu.met.cs665.stores.StoreFactory;
 
 
 public class testCustomer {
@@ -20,11 +22,18 @@ public class testCustomer {
   Customer customerPartyStore;
   @Before
   public void setUp() throws Exception {
-    customerCandyStore = new Customer("Candy Store");
-    customerFlowerStore = new Customer("Flower Store");
-    customerFoodStore = new Customer("Food Store");
-    customerBirthdayStore = new Customer("Birthday Store");
-    customerPartyStore = new Customer("Party Store");
+    Store birthdayStore = StoreFactory.getStore("Birthday Store");
+    Store candyStore = StoreFactory.getStore("Candy Store");
+    Store flowerStore = StoreFactory.getStore("Flower Store");
+    Store foodStore = StoreFactory.getStore("Food Store");
+    Store partyStore = StoreFactory.getStore("Party Store");
+    customerCandyStore = new Customer(candyStore);
+    customerFlowerStore = new Customer(flowerStore);
+    customerFoodStore = new Customer(foodStore);
+    customerBirthdayStore = new Customer(birthdayStore);
+    customerPartyStore = new Customer(partyStore);
+    
+
   }
 
   // Test for the five types of stores

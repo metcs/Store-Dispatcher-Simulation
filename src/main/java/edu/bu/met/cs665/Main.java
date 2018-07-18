@@ -3,6 +3,8 @@ package edu.bu.met.cs665;
 import edu.bu.met.cs665.customers.Customer;
 import edu.bu.met.cs665.dispatchers.Dispatcher;
 import edu.bu.met.cs665.dispatchers.StoreDispatcher;
+import edu.bu.met.cs665.stores.Store;
+import edu.bu.met.cs665.stores.StoreFactory;
 import edu.bu.met.cs665.vehicles.TaxiVehicle;
 import edu.bu.met.cs665.vehicles.VanVehicle;
 import edu.bu.met.cs665.vehicles.Vehicle;
@@ -16,11 +18,16 @@ public class Main {
   public static void main(String[] args) {
     // Per instructions:
     // 5 shops with 5 different types of products
-    String birthdayStore = "Birthday Store";
-    String candyStore = "Candy Store";
-    String flowerStore = "Flower Store";
-    String foodStore = "Food Store";
-    String partyStore = "Party Store";
+//    String birthdayStore = "Birthday Store";
+//    String candyStore = "Candy Store";
+//    String flowerStore = "Flower Store";
+//    String foodStore = "Food Store";
+//    String partyStore = "Party Store";
+    Store birthdayStore = StoreFactory.getStore("Birthday Store");
+    Store candyStore = StoreFactory.getStore("Candy Store");
+    Store flowerStore = StoreFactory.getStore("Flower Store");
+    Store foodStore = StoreFactory.getStore("Food Store");
+    Store partyStore = StoreFactory.getStore("Party Store");
     // 10 customer orders
     Customer customer1 = new Customer(birthdayStore);
     customer1.order();

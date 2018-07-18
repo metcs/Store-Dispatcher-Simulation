@@ -13,14 +13,15 @@ public class Customer {
     // For the time being assume the customer can only buy this many products at a time.
     // This is for the purpose of randomly selecting products to purchase.
     static int maxNumItemsCustomerCanBuy = 10;
-    private String storeName;
+//    private String storeName;
     private Store store;
     private int distanceFromStore;
     private Map<Store, Integer> distanceFromEachStore;
     
-    public Customer(String storeName){
-      this.storeName = storeName;
-      store = setStore(this.storeName);
+    public Customer(Store store){
+//      this.storeName = storeName;
+//      store = setStore(this.storeName);
+      this.store = store;
       // Get the initial random assignment of distance for this customer from each of the
       // registered stores.
       this.distanceFromEachStore = StoreDispatcher.getInstance().makeRandomInitialDistanceAssignments();
