@@ -142,6 +142,8 @@ public class StoreDispatcher implements Dispatcher {
           // ordersNotScheduled list while
           // iterating on it.
           this.ordersInTransit.add(order);
+          // Notify the customer that their order is on the way.
+          order.getCustomer().receiveMessage("Dear Customer, Order " + order.getOrderNumber() + " has been scheduled for delivery.  Thank you for doing business with us!");
           // Set deliveryVehicle back to null to begin the process check again
           deliveryVehicle = null;
           // Vehicle has been found, so break out of the vehicle for loop and back to the orders for

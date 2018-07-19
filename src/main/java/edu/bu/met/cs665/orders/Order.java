@@ -1,10 +1,12 @@
 package edu.bu.met.cs665.orders;
 
+
 import edu.bu.met.cs665.customers.Customer;
 import edu.bu.met.cs665.products.Product;
 import edu.bu.met.cs665.stores.Store;
 
 import java.util.List;
+import java.util.UUID;
 
 public class Order {
   private Customer customer;
@@ -12,6 +14,7 @@ public class Order {
   private Store store;
   private boolean keepOrderFrozen;
   protected String typeOfOrder;
+  private UUID orderNumber;
 
   /**
    * Create a customer order.
@@ -32,8 +35,14 @@ public class Order {
     this.customer = customer;
     this.store = store;
     this.setTypeOfOrder();
+    this.orderNumber = UUID.randomUUID();
   }
 
+  
+  public UUID getOrderNumber(){
+    return this.orderNumber;
+  }
+  
   private void setTypeOfOrder() {
     this.typeOfOrder = "Normal Order";
   }

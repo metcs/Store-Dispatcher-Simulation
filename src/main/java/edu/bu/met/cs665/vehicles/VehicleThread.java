@@ -42,11 +42,11 @@ public class VehicleThread implements Runnable {
     // Send dispatch a message that this vehicle has begun an order.
     if (this.order.getTypeOfOrder().equals("Birthday Order")) {
       vehicle.sendStatusMessageToDispatch(
-          "Vehicle " + vehicle.getVIN() + " has been dispatched to deliver a BIRTHDAY order");
+          "Vehicle " + vehicle.getVIN() + " has been dispatched to deliver a BIRTHDAY order.  Order number is: " + order.getOrderNumber() + ".");
     } else {
       vehicle.sendStatusMessageToDispatch(
           "Vehicle " + vehicle.getVIN() + " has been dispatched to deliver an order with"
-              + " the following contents:\n" + vehicle.getCurrentOrder());
+              + " the following contents:\n" + vehicle.getCurrentOrder() + ".  Order number is: " + order.getOrderNumber() + ".");
     }
     int totalDistanceCopy = totalDistance;
     while (totalDistance > 0) {

@@ -61,6 +61,16 @@ public class Customer {
     List<Product> selectedProducts = selectProducts(allProductsInStore);
     placeOrder(store, selectedProducts);
   }
+  
+  /**
+   * Receive a message from an outside source.
+   * This is the method that will be called by the dispatcher when an order has
+   * been scheduled for delivery.
+   * @param message The contents of the message sent to the customer
+   */
+  public void receiveMessage(String message){
+    System.out.println(message);
+  }
 
 
   public Store getStore() {
