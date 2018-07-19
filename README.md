@@ -99,6 +99,23 @@ and the customer is notified that a delivery has been scheduled.</p>
 		distance from each store.
 	</li>
 </ul>
+<h2>Design Considerations</h2>
+<ul>
+	<li>To handle the communication between several objects, I used the observer pattern in a couple places.
+		The Dispatcher is the observable for several observer classes, including the vehicles and the stores.
+		In addition, vehicles and stores have a reference to the dispatcher object and make frequent broadcasts to the dispatcher.
+	</li>
+	<li>
+		To ensure that all entities are communicating with the same Dispatcher object, StoreDispatcher, as subclass of Dispatcher,
+		is a Singleton object.
+	</li>
+	<li>
+		To help with the creation of instances of several related objects, I use a factory pattern to create Store instances.
+	</li>
+	<li>
+		I believe the use of these design patterns will help with the simplicilty and understandability of the design.
+	</li>
+</ul>
 # Project Template
 
 This is a Java Maven Project Template
