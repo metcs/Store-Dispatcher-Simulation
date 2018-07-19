@@ -1,13 +1,13 @@
 package edu.bu.met.cs665.products;
 
-public abstract class AbstractProduct implements Product{
+public abstract class AbstractProduct implements Product {
   protected String name;
-  
-  public String getName(){
+
+  public String getName() {
     return this.name;
   }
-  
-  public String toString(){
+
+  public String toString() {
     return this.getName();
   }
 }

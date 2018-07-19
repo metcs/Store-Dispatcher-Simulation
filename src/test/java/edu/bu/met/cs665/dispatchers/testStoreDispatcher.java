@@ -19,10 +19,11 @@ public class testStoreDispatcher {
 
   Dispatcher dispatcher;
   Vehicle vehicle;
+
   @Before
   public void setUp() throws Exception {
     // Because this is a Singleton object, properties on this object will NOT be reset
-    // at the beginning of each test as  you would expect in setUp()
+    // at the beginning of each test as you would expect in setUp()
     dispatcher = StoreDispatcher.getInstance();
     vehicle = new VanVehicle();
   }
@@ -37,11 +38,11 @@ public class testStoreDispatcher {
     dispatcher.registerVehicle(vehicle);
     // Test that the vehicle has now been registered
     assertEquals((initialVehiclesState.contains(vehicle)), true);
-//    assertFalse(!(initialVehiclesState.contains(vehicle)));
+    // assertFalse(!(initialVehiclesState.contains(vehicle)));
   }
 
   @Test
-  public void testThatVehicleCanBeUnRegistered(){
+  public void testThatVehicleCanBeUnRegistered() {
     // Register vehicle
     dispatcher.registerVehicle(vehicle);
     // Test the initial state contains the registered vehicle
@@ -50,15 +51,15 @@ public class testStoreDispatcher {
     dispatcher.removeVehicle(vehicle);
     // Test that the vehicle is no longer registered
     assertEquals((dispatcher.getRegisteredVehicles().contains(vehicle)), false);
-//    assertTrue(!(dispatcher.getRegisteredVehicles().contains(vehicle)));
+    // assertTrue(!(dispatcher.getRegisteredVehicles().contains(vehicle)));
   }
-  
+
   @Test
-  public void testThatVechicleCanOnlyOccurInRegistryOnce(){
+  public void testThatVechicleCanOnlyOccurInRegistryOnce() {
     // Test the initial state has zero occurrences of vehicle
     // Need to throw this check in because dispatcher is a Singleton and
     // This vehicle may have already been assigned in previous test methods.
-    if(dispatcher.getRegisteredVehicles().indexOf(vehicle) != -1){
+    if (dispatcher.getRegisteredVehicles().indexOf(vehicle) != -1) {
       dispatcher.removeVehicle(vehicle);
     }
     int firstIndex = dispatcher.getRegisteredVehicles().indexOf(vehicle);
@@ -67,27 +68,30 @@ public class testStoreDispatcher {
     dispatcher.registerVehicle(vehicle);
     dispatcher.registerVehicle(vehicle);
     // Test that the vehicle was only registered once
-    //  (if the first index and last index are the same then it only exists once)
+    // (if the first index and last index are the same then it only exists once)
     assertEquals(dispatcher.getRegisteredVehicles().indexOf(vehicle),
         dispatcher.getRegisteredVehicles().lastIndexOf(vehicle));
   }
-  
+
   @Test
-  public void testApplicationDoesntErrorWhenTryingToRemoveUnregisteredVehicle(){
-    // If an exception is thrown, this test will fail.  
+  public void testApplicationDoesntErrorWhenTryingToRemoveUnregisteredVehicle() {
+    // If an exception is thrown, this test will fail.
     dispatcher.removeVehicle(new VanVehicle());
   }
-  
+
   @Test
-  public void testRecieveOrderAddsToOrdersToBeScheduledList(){
-    
-    Order orderToBeTested = new Order(new ArrayList<Product>(), new Customer(StoreFactory.getStore("Birthday Store")), new BirthdayStore());
-    List<Order> ordersStateBeforeAddedOrder = ((StoreDispatcher) dispatcher).getOrdersNotScheduled();
+  public void testRecieveOrderAddsToOrdersToBeScheduledList() {
+
+    Order orderToBeTested = new Order(new ArrayList<Product>(),
+        new Customer(StoreFactory.getStore("Birthday Store")), new BirthdayStore());
+    List<Order> ordersStateBeforeAddedOrder =
+        ((StoreDispatcher) dispatcher).getOrdersNotScheduled();
     // Check that the order is not in the first state
     assertFalse(ordersStateBeforeAddedOrder.contains(orderToBeTested));
     // Add the order
     dispatcher.receiveOrder(orderToBeTested);
     // Check that the order is in the list after being sent to the dispatcher
-    assertEquals((((StoreDispatcher) dispatcher).getOrdersNotScheduled().contains(orderToBeTested)), true);
+    assertEquals((((StoreDispatcher) dispatcher).getOrdersNotScheduled().contains(orderToBeTested)),
+        true);
   }
 }

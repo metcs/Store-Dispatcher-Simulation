@@ -20,6 +20,7 @@ public class testCustomer {
   Customer customerFoodStore;
   Customer customerBirthdayStore;
   Customer customerPartyStore;
+
   @Before
   public void setUp() throws Exception {
     Store birthdayStore = StoreFactory.getStore("Birthday Store");
@@ -32,8 +33,6 @@ public class testCustomer {
     customerFoodStore = new Customer(foodStore);
     customerBirthdayStore = new Customer(birthdayStore);
     customerPartyStore = new Customer(partyStore);
-    
-
   }
 
   // Test for the five types of stores

@@ -1,11 +1,12 @@
 package edu.bu.met.cs665.vehicles;
 
-import java.util.Map;
-import java.util.UUID;
 import edu.bu.met.cs665.dispatchers.Dispatcher;
 import edu.bu.met.cs665.dispatchers.StoreDispatcher;
 import edu.bu.met.cs665.orders.Order;
 import edu.bu.met.cs665.stores.Store;
+
+import java.util.Map;
+import java.util.UUID;
 
 public abstract class AbstractVehicle implements Vehicle {
 
@@ -17,7 +18,7 @@ public abstract class AbstractVehicle implements Vehicle {
   protected Order currentOrder;
   protected int distanceTravelledOnThisOrder;
   protected int distanceLeftToTravelOnThisOrder;
-  
+
   @Override
   public int getDistanceTravelledOnThisOrder() {
     return distanceTravelledOnThisOrder;
@@ -45,35 +46,24 @@ public abstract class AbstractVehicle implements Vehicle {
   public void updateDispatcher(int newDistance) {
     dispatcher.updateVehicleDistance(this, newDistance);
   }
-  
-  public boolean getStatus(){
+
+  public boolean getStatus() {
     return this.availableForDelivery;
   }
-  
-  public void toggleStatus(){
+
+  public void toggleStatus() {
     this.availableForDelivery = !this.availableForDelivery;
   }
-  
+
   /**
-   * Called from the dispatcher when this vehicle is to deliver the given order
+   * Called from the dispatcher when this vehicle is to deliver the given order.
+   * 
    * @param order the Order to be delivered
-   * @param the total distance the vehicle will need to traverse to deliver the given order
+   * @param totalDistance the total distance the vehicle will need to
+   *        traverse to deliver the given order
    */
-  public void deliverOrder(Order order, int totalDistance){
+  public void deliverOrder(Order order, int totalDistance) {
     // Vehicle is not currently available for delivery
-//    availableForDelivery = false;
-//    System.out.println("Vehicle " + VIN + " has been assigned a new order with a total distance of: " + totalDistance);
-//    while(totalDistance > 0){
-//      totalDistance--;
-//      try {
-//        Thread.sleep(100L);
-//        System.out.println("Distance remaining is: " + totalDistance);
-//      } catch (InterruptedException e) {
-//        // TODO Auto-generated catch block
-//        e.printStackTrace();
-//      }
-//    }
-//    this.availableForDelivery = true;
     // Run the delivery on a separate thread so the deliveries can happen concurrently
     // This is the current order on the vehicle.
     this.currentOrder = order;
@@ -82,70 +72,78 @@ public abstract class AbstractVehicle implements Vehicle {
     deliveryThread.start();
 
   }
-  
+
   /**
-   * After a vehicle has delivered their order, the order instance for the vehicle
-   * needs to be set back to null to signify that the vehicle doesn't have an order
-   * on board.
+   * After a vehicle has delivered their order, the order instance for the vehicle needs to be set
+   * back to null to signify that the vehicle doesn't have an order on board.
    */
-  public void setCurrentOrderToNull(){
+  public void setCurrentOrderToNull() {
     this.currentOrder = null;
   }
+
   /**
-   * Updates the distance 
+   * Updates the distance.
    */
-  public void updateDistance(int distanceChanged){
-    
+  public void updateDistance(int distanceChanged) {
+
   }
-  
-  public Order getCurrentOrder(){
+
+  public Order getCurrentOrder() {
     return this.currentOrder;
   }
-  
-  public UUID getVIN(){
+
+  public UUID getVIN() {
     return this.VIN;
   }
-  
-  public void setAvailableForDelivery(boolean available){
+
+  /**
+   * As the vehicle receives and delivers orders.
+   * toggle off the indicator as to whether they are available for delivery.
+   * @param available the boolean representation of whether a vehicle is able to take a new order.
+   */
+  public void setAvailableForDelivery(boolean available) {
     this.availableForDelivery = available;
-    if(this.availableForDelivery){
+    if (this.availableForDelivery) {
       this.sendStatusMessageToDispatch("Vehicle " + this.VIN + " is now available for deliveries");
-    }else{
-      this.sendStatusMessageToDispatch("Vehicle " + this.VIN + " has a new order and is no longer available for deliveries");
+    } else {
+      this.sendStatusMessageToDispatch(
+          "Vehicle " + this.VIN + " has a new order and is no longer available for deliveries");
     }
   }
-  
-  public Map<Store, Integer> getDistancesFromEachStore(){
+
+  public Map<Store, Integer> getDistancesFromEachStore() {
     return this.distanceFromEachStore;
   }
-  
-  public void receiveMessageFromDispatch(String message){
+
+  public void receiveMessageFromDispatch(String message) {
     System.out.println("The following message has been received from dispatch: " + message);
   }
-  
+
   /**
-   * When the status of the vehicle changes, sends the updated status
-   * to the dispatcher for display on the screen
+   * When the status of the vehicle changes, sends the updated status to the dispatcher for display.
+   * on the screen
+   * 
    * @param message The message to be sent to the dispatcher
    */
-  public void sendStatusMessageToDispatch(String message){
+  public void sendStatusMessageToDispatch(String message) {
     this.dispatcher.displayMessageFromVehicle(message);
   }
+
   /**
-   *Assign the dispatcher instance to the singleton StoreDispatcher
-   *and register with the dispatcher.
+   * Assign the dispatcher instance to the singleton StoreDispatcher and register with the
+   * dispatcher.
    * 
    */
-  public AbstractVehicle(){
+  public AbstractVehicle() {
     // Dispatcher is a singleton
     this.dispatcher = StoreDispatcher.getInstance();
     this.distanceFromEachStore = this.dispatcher.registerVehicle(this);
     this.availableForDelivery = true;
     VIN = UUID.randomUUID();
   }
-  
-  public void setDistanceFromEachStore(Map<Store, Integer> newDistanceFromEachStore){
-    
+
+  public void setDistanceFromEachStore(Map<Store, Integer> newDistanceFromEachStore) {
+
   }
 
 }

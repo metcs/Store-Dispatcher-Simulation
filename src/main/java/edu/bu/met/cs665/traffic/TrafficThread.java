@@ -4,12 +4,13 @@ import edu.bu.met.cs665.dispatchers.Dispatcher;
 import edu.bu.met.cs665.dispatchers.StoreDispatcher;
 
 /**
- * A class for running a thread that mimics a traffic reporting service.
- * This will interject a high traffic event into the simulation.
+ * A class for running a thread that mimics a traffic reporting service. This will interject a high
+ * traffic event into the simulation.
+ * 
  * @author Rich
  *
  */
-public class TrafficThread implements Runnable{
+public class TrafficThread implements Runnable {
 
   @Override
   public void run() {
@@ -22,10 +23,9 @@ public class TrafficThread implements Runnable{
       Thread.sleep(2000);
       dispatcher.setIncreasedTraffic(false);
     } catch (InterruptedException e) {
-      // TODO Auto-generated catch block
       e.printStackTrace();
     }
-    
+
   }
 
 }

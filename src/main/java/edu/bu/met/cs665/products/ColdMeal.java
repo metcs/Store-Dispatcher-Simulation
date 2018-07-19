@@ -1,9 +1,9 @@
 package edu.bu.met.cs665.products;
 
-public class ColdMeal extends Food{
+public class ColdMeal extends Food {
 
 
-  public ColdMeal(){
+  public ColdMeal() {
     this.name = "Cold Meal";
   }
 
@@ -14,7 +14,6 @@ public class ColdMeal extends Food{
 
   @Override
   public boolean needsKeepWarm() {
-    // TODO Auto-generated method stub
     return false;
   }
 }

@@ -1,31 +1,23 @@
 package edu.bu.met.cs665.stores;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import edu.bu.met.cs665.customers.Customer;
-import edu.bu.met.cs665.dispatchers.Dispatcher;
-import edu.bu.met.cs665.orders.Order;
 import edu.bu.met.cs665.products.EliteFlowerArrangement;
-import edu.bu.met.cs665.products.Product;
 import edu.bu.met.cs665.products.SimpleFlowerArrangement;
 
-public class FlowerStore extends AbstractStore{
+import java.util.ArrayList;
 
-  public FlowerStore(){
+public class FlowerStore extends AbstractStore {
+
+  /**
+   * This is only here to satisfy the google style checker.
+   */
+  public FlowerStore() {
     this.products = new ArrayList<>();
     this.products.add(new SimpleFlowerArrangement());
     this.products.add(new EliteFlowerArrangement());
   }
 
 
-  @Override
-  public void submitDeliveryRequest(Order order, Customer customer) {
-    // TODO Auto-generated method stub
-    
-  }
-
-  public String toString(){
+  public String toString() {
     return "Flower Store";
   }
 }
