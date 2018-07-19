@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import edu.bu.met.cs665.customers.Customer;
+import edu.bu.met.cs665.orders.BirthdayOrder;
 import edu.bu.met.cs665.orders.Order;
 import edu.bu.met.cs665.stores.Store;
 import edu.bu.met.cs665.vehicles.Vehicle;
@@ -248,6 +249,10 @@ public class StoreDispatcher implements Dispatcher {
       System.out.println("Traffic levels are normal.");
     }
     System.out.println("************************************************************");
+  }
+  
+  public void placeBirthdayOrder(BirthdayOrder order){
+    this.ordersNotScheduled.add(order);
   }
 
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import edu.bu.met.cs665.dispatchers.StoreDispatcher;
+import edu.bu.met.cs665.orders.BirthdayOrder;
 import edu.bu.met.cs665.products.Product;
 import edu.bu.met.cs665.stores.Store;
 import edu.bu.met.cs665.stores.StoreFactory;
@@ -17,6 +18,7 @@ public class Customer {
     private Store store;
     private int distanceFromStore;
     private Map<Store, Integer> distanceFromEachStore;
+    private boolean hasBirthday;
     
     public Customer(Store store){
 //      this.storeName = storeName;
@@ -27,10 +29,20 @@ public class Customer {
       this.distanceFromEachStore = StoreDispatcher.getInstance().makeRandomInitialDistanceAssignments();
       // Set a random distance from the store
       distanceFromStore = new Random().nextInt(50);
+      // Randomly choose if customer has a birthday
+      if(distanceFromStore > 47 || distanceFromStore < 2){
+        this.hasBirthday = true;
+      }else{
+        this.hasBirthday = false;
+      }
     }
     
     public Map<Store, Integer> getDistanceFromEachStore(){
       return this.distanceFromEachStore;
+    }
+
+    public boolean getHasBirthday(){
+      return this.hasBirthday;
     }
     
     public int getDistanceFromStore(){
@@ -75,6 +87,10 @@ public class Customer {
     }
     return selectedProducts;
   }
+   
+//   private void placeBirthdayOrder(){
+//     dispatcher.placeBirthdayOrder(new BirthdayOrder(this, this.store));
+//   }
    // Place an order at a store with the list of products in the order
    private void placeOrder(Store store, List<Product> products) {
        store.createOrder(products, this);

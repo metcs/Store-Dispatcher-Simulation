@@ -10,6 +10,7 @@ public class Order {
     List<Product> products;
     private Store store;
     private boolean keepOrderFrozen;
+    protected String typeOfOrder;
     
     public Order(List<Product> products, Customer customer, Store store){
       // Determine if this order will need to be frozen based on the products in the order
@@ -23,8 +24,17 @@ public class Order {
       this.products = products;
       this.customer = customer;
       this.store = store;
+      this.setTypeOfOrder();
     }
     
+    private void setTypeOfOrder() {
+      this.typeOfOrder =  "Normal Order";
+    }
+    
+    public String getTypeOfOrder(){
+      return this.typeOfOrder;
+    }
+
     public boolean getKeepFrozen(){
       return this.keepOrderFrozen;
     }

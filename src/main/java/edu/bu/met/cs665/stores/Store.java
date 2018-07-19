@@ -15,4 +15,6 @@ public interface Store {
     void createOrder(List<Product> products, Customer customer);
     // Return a list of the products in the store
     public List<Product> getProducts();
+    void placeBirthdayOrder(Customer customer);
+    
 }

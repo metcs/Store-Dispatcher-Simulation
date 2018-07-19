@@ -31,9 +31,12 @@ public class VehicleThread implements Runnable{
     // Vehicle is not currently available for delivery.
     // Keep a copy of the initial total distance to enable to track distance delivered so far
     // Send dispatch a message that this vehicle has begun an order.
-    vehicle.sendStatusMessageToDispatch("Vehicle " + vehicle.getVIN() + " has been dispatched to deliver an order with"
-        + " the following contents:\n" + vehicle.getCurrentOrder());
-    
+    if (this.order.getTypeOfOrder().equals("Birthday Order")){
+      vehicle.sendStatusMessageToDispatch("Vehicle " + vehicle.getVIN() + " has been dispatched to deliver a BIRTHDAY order");
+    }else{
+      vehicle.sendStatusMessageToDispatch("Vehicle " + vehicle.getVIN() + " has been dispatched to deliver an order with"
+          + " the following contents:\n" + vehicle.getCurrentOrder());
+    }
     int totalDistanceCopy = totalDistance;
 //    vehicle.setAvailableForDelivery(false);
 //    System.out.println("Vehicle " + vehicle.getVIN() + " has been assigned a new order with a total distance of: " + totalDistance);
